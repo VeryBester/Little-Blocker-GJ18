@@ -14,6 +14,14 @@ public class PlayerMovement : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        var pos = Camera.main.WorldToScreenPoint(transform.position);
+        var dir = Input.mousePosition - pos;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    }
+
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
@@ -28,6 +36,6 @@ public class PlayerMovement : MonoBehaviour {
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         //rb2d.AddForce(movement * speed);
-        rb2d.velocity = movement * speed;
+        rb2d.velocity = movement * speed;   
     }
 }
