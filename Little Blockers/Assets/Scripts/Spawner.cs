@@ -5,27 +5,27 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public GameObject bullets;
+    public GameObject spawner;
     private float spawnTime = 0f;
     public float spawnRate;
     public Transform spawnerLocation;
+
     
 
 	void Start () {
 
-		
 	}
 	
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            print("button works");
-            Instantiate(bullets);
-        }
         if (Time.time > spawnTime)
         {
             Instantiate(bullets, spawnerLocation.position, spawnerLocation.rotation);
             spawnTime = Time.time + spawnRate;
         }
+
 	}
+
+
+    
 }
