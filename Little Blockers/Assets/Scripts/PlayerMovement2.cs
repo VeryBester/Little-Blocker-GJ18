@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class PlayerMovement2 : MonoBehaviour
 {
 
@@ -9,6 +11,7 @@ public class PlayerMovement2 : MonoBehaviour
 
     private Rigidbody2D rb2d;
     public float rotationSpeed = 3;
+    player player = new player();
     // Use this for initialization
     void Start()
     {
@@ -53,7 +56,22 @@ public class PlayerMovement2 : MonoBehaviour
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         //rb2d.AddForce(movement * speed);
         rb2d.velocity = movement * speed;
-
+        rb2d.angularVelocity = 0;
         //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+
+            player.GotHit();
+            if (player.GetHealth() == 0)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("P1Win");
+            }
+        }
+
     }
 }

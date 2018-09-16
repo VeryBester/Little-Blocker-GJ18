@@ -14,11 +14,14 @@ public class Bullet : MonoBehaviour {
     GameObject playerTwo;
     Rigidbody2D rb;
 
+
     int start;
 
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+
+
         
         //Links the gameobject to the players
         playerOne = GameObject.FindGameObjectWithTag("playerOne");
@@ -37,6 +40,12 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 
         
+    }
+
+    void FixedUpdate() {
+        if (rb.velocity.magnitude < speed ){
+            rb.velocity  = rb.velocity * 1.05f;
+        }
     }
 
     //returns the direction to the players
@@ -63,41 +72,16 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "shield1" && !hitShield)
+        
+
+        if(collision.gameObject.tag == "playerOne" || collision.gameObject.tag =="playerTwo")
         {
-            time = Time.time + 0.2f;
-            print("shield working");
+
+            Destroy(gameObject);
             
-            Vector3 velocity = new Vector3(rb.velocity.x * -5, rb.velocity.y * -5, 0);
-            rb.velocity = velocity;
-            hitShield = true;
-            
-
-        }
-
-        if (collision.gameObject.tag == "shield2" && !hitShield)
-        {
-            /*time = Time.time + 0.2f;
-            print("shield working");
-
-            Vector3 velocity = new Vector3(rb.velocity.x * -5, rb.velocity.y * -5, 0);
-            rb.velocity = velocity;
-            hitShield = true;
-            */
-
         }
 
 
-
-        if (collision.gameObject.tag == "wall")
-        {
-            rb.velocity *= 0.5f;
-            hitShield = false;
-            if (new Vector3(speed, speed, 0).magnitude > rb.velocity.magnitude)
-            {
-                rb.velocity = new Vector3(speed, speed, 0);
-            }
-        }
     }
 
 
