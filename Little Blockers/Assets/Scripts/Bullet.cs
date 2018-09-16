@@ -63,17 +63,33 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "shield" && !hitShield)
+        if (collision.gameObject.tag == "shield1" && !hitShield)
         {
             time = Time.time + 0.2f;
             print("shield working");
-            rb.velocity *= -5;
+            
+            Vector3 velocity = new Vector3(rb.velocity.x * -5, rb.velocity.y * -5, 0);
+            rb.velocity = velocity;
             hitShield = true;
             
 
         }
 
-        if(collision.gameObject.tag == "wall")
+        if (collision.gameObject.tag == "shield2" && !hitShield)
+        {
+            /*time = Time.time + 0.2f;
+            print("shield working");
+
+            Vector3 velocity = new Vector3(rb.velocity.x * -5, rb.velocity.y * -5, 0);
+            rb.velocity = velocity;
+            hitShield = true;
+            */
+
+        }
+
+
+
+        if (collision.gameObject.tag == "wall")
         {
             rb.velocity *= 0.5f;
             hitShield = false;
