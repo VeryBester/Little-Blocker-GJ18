@@ -6,22 +6,28 @@ public class Bullet : MonoBehaviour {
 
     // Use this for initialization
     public GameObject bullet;
-    public GameObject playerOne;
-    public GameObject playerTwo;
+    public float speed;
+    GameObject playerOne;
+    GameObject playerTwo;
     Rigidbody2D rb;
-    public Object test;
+
     int start;
 
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        start = (int) Mathf.Round(Random.value);
+        
+        //Links the gameobject to the players
+        playerOne = GameObject.FindGameObjectWithTag("playerOne");
+        playerTwo = GameObject.FindGameObjectWithTag("playerTwo");
 
-        Vector3 player1 = playerOne.transform.position;
+
+        //Randomly decides who to shoot at
+        start = (int)Mathf.Round(Random.value);
         if (start == 1)
-            rb.velocity = GetDirectionToPlayer(playerOne);
+            rb.velocity = GetDirectionToPlayer(playerOne)*speed;
         else
-            rb.velocity = GetDirectionToPlayer(playerTwo);
+            rb.velocity = GetDirectionToPlayer(playerTwo)*speed;
             
     }
 	
@@ -50,6 +56,14 @@ public class Bullet : MonoBehaviour {
         return unitVector;
 
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "shield")
+        {
+            print("im hit");
+        }
     }
 
 

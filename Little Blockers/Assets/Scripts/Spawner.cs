@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public GameObject bullets;
-    public GameObject spawner;
     private float spawnTime = 0f;
     public float spawnRate;
     public Transform spawnerLocation;
