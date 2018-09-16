@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour {
     // Use this for initialization
     public GameObject bullet;
     public float speed;
+    public float maxSpeed;
+    float time;
+    bool hitShield = false;
     GameObject playerOne;
     GameObject playerTwo;
     Rigidbody2D rb;
@@ -60,9 +63,24 @@ public class Bullet : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "shield")
+        if (collision.gameObject.tag == "shield" && !hitShield)
         {
-            print("im hit");
+            time = Time.time + 0.2f;
+            print("shield working");
+            rb.velocity *= -5;
+            hitShield = true;
+            
+
+        }
+
+        if(collision.gameObject.tag == "wall")
+        {
+            rb.velocity *= 0.5f;
+            hitShield = false;
+            if (new Vector3(speed, speed, 0).magnitude > rb.velocity.magnitude)
+            {
+                rb.velocity = new Vector3(speed, speed, 0);
+            }
         }
     }
 
