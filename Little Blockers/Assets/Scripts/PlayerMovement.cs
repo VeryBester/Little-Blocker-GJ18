@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour {
         var dir = Input.mousePosition - pos;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         */
-        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
     }
 
