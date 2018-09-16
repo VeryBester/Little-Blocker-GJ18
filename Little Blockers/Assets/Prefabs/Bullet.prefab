@@ -50,7 +50,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317361946188026}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1317361946188026}
-  playerOne: {fileID: 0}
-  playerTwo: {fileID: 0}
+  playerOne: {fileID: 1777812763313112, guid: 57ca973d5f9a1df4a9be077deee08977, type: 2}
+  playerTwo: {fileID: 1356191144873234, guid: af22e30feaf09f547a02e0b58a3a9b5a, type: 2}
 --- !u!212 &212896902680500150
 SpriteRenderer:
   m_ObjectHideFlags: 1

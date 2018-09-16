@@ -9,30 +9,35 @@ public class Bullet : MonoBehaviour {
     public GameObject playerOne;
     public GameObject playerTwo;
     Rigidbody2D rb;
-    
+    public Object test;
+    int start;
 
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        int start = (int) Mathf.Round(Random.value);
+        start = (int) Mathf.Round(Random.value);
+
+        Vector3 player1 = playerOne.transform.position;
         if (start == 1)
             rb.velocity = GetDirectionToPlayer(playerOne);
         else
             rb.velocity = GetDirectionToPlayer(playerTwo);
-	}
+            
+    }
 	
 	void Update () {
-	    
+
         
-	}
+    }
 
     //returns the direction to the players
     public Vector3 GetDirectionToPlayer(GameObject player)
     {
         Vector3 playerPosition = player.transform.position;
         Vector3 spawnerLocaiton = bullet.transform.position;
-        Vector3 PositionVectorDiff = new Vector3(playerPosition.x - spawnerLocaiton.x, playerPosition.y - spawnerLocaiton.y,
-                playerPosition.z - spawnerLocaiton.z);
+        Vector3 PositionVectorDiff = new Vector3(playerPosition.x - spawnerLocaiton.x, 
+                playerPosition.y - spawnerLocaiton.y, playerPosition.z - spawnerLocaiton.z);
+        print(playerPosition);
         Vector3 direction = GetUnitVector(PositionVectorDiff);
         return direction;
     }
