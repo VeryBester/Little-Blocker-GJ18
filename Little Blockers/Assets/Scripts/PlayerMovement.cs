@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 10.0f;             //Floating point variable to store the player's movement speed.
 
     private Rigidbody2D rb2d;
+    private float rotationSpeed;
     // Use this for initialization
     void Start()
     {
@@ -16,10 +17,13 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Update()
     {
+        /*
         var pos = Camera.main.WorldToScreenPoint(transform.position);
         var dir = Input.mousePosition - pos;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        */  
+
+        
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -36,6 +40,7 @@ public class PlayerMovement : MonoBehaviour {
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         //rb2d.AddForce(movement * speed);
-        rb2d.velocity = movement * speed;   
+        rb2d.velocity = movement * speed;
+        transform.Rotate(0, 0, 100 * Time.deltaTime);
     }
 }
