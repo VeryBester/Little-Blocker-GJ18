@@ -507,6 +507,26 @@ Prefab:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.7008028
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f178643ae1773dd41bcd30a8832961aa, type: 2}
   m_IsPrefabAsset: 0
@@ -619,6 +639,29 @@ Prefab:
     - target: {fileID: 4481693658163552, guid: f178643ae1773dd41bcd30a8832961aa, type: 2}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 61193840461164776, guid: f178643ae1773dd41bcd30a8832961aa,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.7008028
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f178643ae1773dd41bcd30a8832961aa, type: 2}
