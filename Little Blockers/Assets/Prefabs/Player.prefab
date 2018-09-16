@@ -88,7 +88,10 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
+<<<<<<< HEAD
   m_AngularDrag: 0
+=======
+>>>>>>> 21a5aa4dc5804510379ba3273635bff41614f554
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -154,6 +157,10 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
+<<<<<<< HEAD
+=======
+  m_Size: {x: 1, y: 1}
+>>>>>>> 21a5aa4dc5804510379ba3273635bff41614f554
   m_EdgeRadius: 0
 --- !u!114 &114897495110863962
 MonoBehaviour:

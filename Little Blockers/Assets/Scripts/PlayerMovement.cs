@@ -21,8 +21,12 @@ public class PlayerMovement : MonoBehaviour {
         var pos = Camera.main.WorldToScreenPoint(transform.position);
         var dir = Input.mousePosition - pos;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+<<<<<<< HEAD
         */
         //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime); 
+=======
+        */  
+>>>>>>> 21a5aa4dc5804510379ba3273635bff41614f554
 
         
     }
@@ -46,6 +50,10 @@ public class PlayerMovement : MonoBehaviour {
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
         //rb2d.AddForce(movement * speed);
         rb2d.velocity = movement * speed;
+<<<<<<< HEAD
         transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+=======
+        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+>>>>>>> 21a5aa4dc5804510379ba3273635bff41614f554
     }
 }
