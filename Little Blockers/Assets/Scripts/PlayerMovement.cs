@@ -21,12 +21,8 @@ public class PlayerMovement : MonoBehaviour {
         var pos = Camera.main.WorldToScreenPoint(transform.position);
         var dir = Input.mousePosition - pos;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-<<<<<<< HEAD
         */
-        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-=======
-        */  
->>>>>>> parent of f63a17b... new shield control
+        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime); 
 
         
     }
